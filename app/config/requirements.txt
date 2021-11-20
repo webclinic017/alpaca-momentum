@@ -1,1 +1,2 @@
 alpaca-trade-api==1.4.1
+rx==3.2.0
