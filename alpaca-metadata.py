@@ -6,6 +6,9 @@ from dataclasses import dataclass
 # Internal Imports
 from config import alpaca_key, alpaca_secret, alpaca_url
 
+#
+loa = []
+
 # Limit API Calls to 200 per minute
 calls = 200
 rate_limit = 60
@@ -28,22 +31,19 @@ def get_alpaca_assets():
     applicable_assets = [a for a in active_assets if a.shortable is True and a.fractionable is True]
     return applicable_assets
 
-
 @dataclass
-class assetMapping:
+class Asset:
     """Class for mapping asset names and symbols from Alpaca."""
     name: str
     symbol: str
 
-    def __init__(self, name: str, symbol: str):
+    def __init__(self, symbol: str, name: str):
         self.name = name
         self.symbol = symbol
 
-    def store_symbol(self, name, symbol) -> dict:
-        return {self.name:self.symbol}
-
 for asset in get_alpaca_assets():
-    assetMapping.store_symbol(asset)
+    current_asset = Asset(asset.symbol, asset.name)
+    loa.append(current_asset)
 
 
 
