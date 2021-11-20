@@ -41,9 +41,9 @@ class Asset:
         self.name = name
         self.symbol = symbol
 
+
 for asset in get_alpaca_assets():
     current_asset = Asset(asset.symbol, asset.name)
     loa.append(current_asset)
 
-
-
+print(loa)
