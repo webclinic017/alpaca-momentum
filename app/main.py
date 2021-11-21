@@ -1,15 +1,13 @@
-from alpaca_trade_api.entity import Clock
-
 from app.repository.alpaca.alpaca_service import AlpacaService
 from app.repository.alpaca.models.MarketStatus import MarketStatus
+from app.usecase import fetch_active_assets
 
 alpaca = AlpacaService()
 
 
-def print_nasdaq_assets(active_assets):
-    nasdaq_assets = [a for a in active_assets if a.exchange == 'NASDAQ']
-    print(nasdaq_assets)
-
+# def print_nasdaq_assets(active_assets):
+#     nasdaq_assets = [a for a in active_assets if a.exchange == 'NASDAQ']
+#     print(nasdaq_assets)
 
 def print_market_status(clock):
     # TODO: Why does this not know what the properties are despite the type hint?
@@ -23,11 +21,7 @@ def print_current_market_status():
 
 
 def main():
-    print_current_market_status()
-
-    active_assets_observable = alpaca.get_active_assets()
-
-    # active_assets_observable.subscribe(lambda active_assets: print_nasdaq_assets(active_assets))
+    fetch_active_assets.main()
 
 
 main()

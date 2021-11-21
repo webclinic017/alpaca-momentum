@@ -8,7 +8,6 @@ from app.repository.alpaca.models import MarketStatus
 
 api = tradeapi.REST(alpaca_key, alpaca_secret, api_version='v2')
 
-
 class IAlpacaService(Protocol):
 
     @abstractmethod
