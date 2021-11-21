@@ -3,5 +3,5 @@ version = "v3"
 base_url = "https://financialmodelingprep.com/api/" + version + "/"
 
 alpaca_url = "https://api.alpaca.markets"
-alpaca_key = "AKR2ND7IJ7EMCZE0TRRP"
-alpaca_secret = "0AEtSWK2bdSFwuBzMK63TiLRQ6YQ1nXPr53EojIB"
+alpaca_key = "FOO"
+alpaca_secret = "BAR"
